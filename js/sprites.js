@@ -127,7 +127,7 @@ class Fighter extends Sprite {
 
         this.isAttacking
         this.onAttackCooldown
-        this.attackCooldown = 500;
+        this.attackCooldown = 700;
 
         this.lastKeyPressed
         this.onGround
@@ -175,7 +175,7 @@ class Fighter extends Sprite {
 
         setTimeout(() => {
             this.isAttacking = false;
-        }, 100)
+        }, 600)
 
         setTimeout(() => {
             this.onAttackCooldown = false
@@ -184,7 +184,7 @@ class Fighter extends Sprite {
 
     jump() {
         if (!this.onGround) return;
-        this.velocity.y -= 16;
+        this.velocity.y -= 13;
     }
 
 }
@@ -198,7 +198,7 @@ const player = new Fighter({
         x: 0,
         y: 0
     },
-    scale: 4,
+    scale: 3,
     sprites: {
         idle: {
             src: "../assets/player/_Idle.png",
@@ -208,7 +208,7 @@ const player = new Fighter({
         running: {
             src: "../assets/player/_Run.png",
             totalSpriteFrames: 10,
-            framesPerSpriteFrame: 10,
+            framesPerSpriteFrame: 12,
         },
         jumping: {
             src: "../assets/player/_Jump.png",
@@ -216,9 +216,9 @@ const player = new Fighter({
             framesPerSpriteFrame: 8,
         },
         attacking: {
-            src: "../assets/player/_Attack.png",
-            totalSpriteFrames: 4,
-            framesPerSpriteFrame: 8,
+            src: "../assets/player/_Attacking.png",
+            totalSpriteFrames: 6,
+            framesPerSpriteFrame: 10,
         }
     }
 })

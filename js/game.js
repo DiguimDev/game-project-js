@@ -7,7 +7,7 @@ const canvasHeight = 576;
 canvas.width = canvasWidth;
 canvas.height = canvasHeight;
 
-const desiredFps = 5;
+const desiredFps = 100;
 const frameTime = 1000 / desiredFps;
 
 let prevTime = performance.now();
@@ -31,11 +31,7 @@ function animate() {
 
         background.update()
         player.update()
-
         lag -= frameTime
     }
-
-    background.update()
-    player.update()
 
 }
